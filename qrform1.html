@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subject Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #282C2F;
+    }
+    .container {
+      text-align: center;
+      background: rgb(88, 88, 90);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+    }
+    h1 {
+      color: rgb(42, 205, 210);
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input[type="text"], input[type="submit"] {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    input[type="submit"] {
+      background-color: #282C2F;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color:rgb(42, 205, 210);
+      color: #282C2F;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="subject-header">Subject Code</h1>
+    <form id="student-form" method="POST" action="save.php">
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      <input type="text" id="index" name="index" placeholder="Enter your index number" required>
+      <input type="hidden" name="subjectCode" value="" id="hidden-subject-code">
+      <input type="submit" value="Submit">
+    </form>
+
+    <script>
+      // Extract subject code from URL query parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const subjectCode = urlParams.get('subjectCode');
+
+      // Set the hidden input for subject code
+      if (subjectCode) {
+        document.getElementById('hidden-subject-code').value = subjectCode;
+      }
+
+      // Optional: Set the subject code in the header for display
+      const subjectHeader = document.getElementById('subject-header');
+      subjectHeader.textContent = subjectCode
+        ? `Subject Code: ${subjectCode}`
+        : "No Subject Code Provided";
+    </script>
+  </div>
+</body>
+</html>
