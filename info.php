@@ -65,25 +65,25 @@ $result = $conn->query($sql);
     }
 
     .navbar-dark .navbar-nav .nav-link {
-    color: rgb(42, 205, 210); /* Change this to any color you prefer */
-    transition: color 0.3s; /* Optional: Smooth color change on hover */
+    color: rgb(42, 205, 210); 
+    transition: color 0.3s; 
     }
     .navbar-dark .navbar-nav .nav-link:hover {
-    color: rgb(255, 255, 255); /* Change hover color */
+    color: rgb(255, 255, 255); 
   }
 
   /* Change brand color */
   .navbar-dark .navbar-brand {
-    color:rgb(42, 205, 210); /* Change this to match your theme */
+    color:rgb(42, 205, 210); 
   }
 
   .navbar-dark .navbar-brand:hover {
-    color: rgb(255, 255, 255); /* Change hover color for the brand */
+    color: rgb(255, 255, 255); 
   }
     h1 {
-     margin-top: 20px; /* Adjust as necessary */
+     margin-top: 20px; 
      text-align: center;
-     color: #333; /* Optional text color */
+     color: #333;
     }
    
   </style>
