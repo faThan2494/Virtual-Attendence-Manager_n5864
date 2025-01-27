@@ -6,7 +6,7 @@ session_start();
 session_unset();
 session_destroy();
 
-// Redirect to the home page (replace 'index.html' with your actual home page file)
+// Redirect to the home page 
 header("Location: index.html");
 exit();
 ?>
